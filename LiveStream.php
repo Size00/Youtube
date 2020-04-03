@@ -10,10 +10,10 @@ function online($youtubeID) {
 						   'key'=> '*****************']; //Get your own key
 									
 			$channel_URL = $API_Url . 'search?' . http_build_query($parameter); // url of content
-									$json_details = json_decode(file_get_contents($channel_URL), true); // jsoncoded
+	                $json_details = json_decode(file_get_contents($channel_URL), true); // jsoncoded
 									
-		    $offline = $json_details['pageInfo']['totalResults'] !== 0;
-            $titles = $json_details['items'][0]['snippet']['title'];
+		        $offline = $json_details['pageInfo']['totalResults'] !== 0;
+                        $titles = $json_details['items'][0]['snippet']['title'];
 			$username = $json_details['items'][0]['snippet']['channelTitle'];
 			$thumbnail = $json_details['items'][0]['snippet']['thumbnails']['high']['url'];
 			 //if($youtubeID == NULL) { echo '<div id="card-1" class="card animated">'.('Data does not exsist').'</div>';}
