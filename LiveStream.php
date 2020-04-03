@@ -1,7 +1,5 @@
 function online($youtubeID) {
 			$API_Url = 'https://www.googleapis.com/youtube/v3/';
-		    //$json_cache = 'json/online.json';  	
-									
 
 			$parameter = [ 'part'=> 'snippet',
 						   'channelId' => "$youtubeID",
