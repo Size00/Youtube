@@ -21,4 +21,8 @@ $vod_url = $ch_vods['snippet']['resourceId']['videoId'];
 echo '( Title - '.$vod_title .'</br> Url - https://www.youtube.com/watch?v='.$vod_url.' )</br>';
  }
 }
-youtube_channel_playlist('UCv9Edl_WbtbPeURPtFDo-uA','AI*****************************2N*iAw', 40); // get your key from google console and replace the *********************************
+youtube_channel_playlist('UCv9Edl_WbtbPeURPtFDo-uA','AI*****************************2N*iAw', 40); 
+
+// UCv9Edl_WbtbPeURPtFDo-uA - Youtube channel ID
+// get your key from google console and replace the *********************************
+// The number of videos could be raised to anywhere from 1-100
