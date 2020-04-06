@@ -25,4 +25,4 @@ youtube_channel_playlist('UCv9Edl_WbtbPeURPtFDo-uA','AI*************************
 
 // UCv9Edl_WbtbPeURPtFDo-uA - Youtube channel ID
 // get your key from google console and replace the *********************************
-// The number of videos could be raised to anywhere from 1-100
+// The number of Youtube videos could be raised to anywhere from 1-100
