@@ -4,15 +4,15 @@ $API_Url = 'https://www.googleapis.com/youtube/v3/';
 	              'id'=> $CHANNELID,
 	              'part'=> 'contentDetails',
 	              'key'=> $APIKEY
-				       ];
+		      ];
 $channel_URL = $API_Url . 'channels?' . http_build_query($parameter);
 $json_details = json_decode(file_get_contents($channel_URL), true);
   $parameter = [
-                  'part'=> 'snippet',
-				          'playlistId' => $json_details['items'][0]['contentDetails']['relatedPlaylists']['uploads'],
-				          'maxResults'=> $mResults,
+                  'part'=> 'snippet'
+                  'playlistId' => $json_details['items'][0]['contentDetails']['relatedPlaylists']['uploads'],
+         	  'maxResults'=> $mResults,
                   'key'=> $APIKEY
-				          ];
+		];
 $channel_URL = $API_Url . 'playlistItems?' . http_build_query($parameter);
 $jd_plist = json_decode(file_get_contents($channel_URL), true);
 foreach( $jd_plist['items'] as $ch_vods){
