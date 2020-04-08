@@ -1,4 +1,4 @@
-function youtube_channel_playlist($playlist_id, $APIKEY,  $mResults){	 
+function youtube_id_playlist($playlist_id, $APIKEY,  $mResults){	 
 $API_Url = 'https://www.googleapis.com/youtube/v3/';
     $parameter = [
                   'part'=> 'snippet',
@@ -14,7 +14,7 @@ $vod_url = $ch_vods['snippet']['resourceId']['videoId'];
 echo '( Title - '.$vod_title .'</br> Url - https://www.youtube.com/watch?v='.$vod_url.' )</br>';
  }
 }
-youtube_channel_playlist('PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw','**************************', 20); 
+youtube_id_playlist('PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw','**************************', 20); 
 
 // PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw - Youtube playlist ID
 // get your key from google console and replace the *********************************
