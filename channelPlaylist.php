@@ -1,11 +1,18 @@
-function youtube_channel_playlist($playlist_id, $APIKEY,  $mResults){	 
+function youtube_channel_playlist($CHANNELID, $APIKEY,  $mResults){	 
 $API_Url = 'https://www.googleapis.com/youtube/v3/';
-//$API_Url = 'json/walkaway.json';
-$parameter = [
-              'part'=> 'snippet',
-	       'playlistId' => $playlist_id,
-	       'maxResults'=>  $mResults,
-	       'key'=> $APIKEY									];
+	$parameter = [
+	              'id'=> $CHANNELID,
+	              'part'=> 'contentDetails',
+	              'key'=> $APIKEY
+				 ];
+$channel_URL = $API_Url . 'channels?' . http_build_query($parameter);
+$json_details = json_decode(file_get_contents($channel_URL), true);
+    $parameter = [
+                  'part'=> 'snippet',
+	          'playlistId' => $json_details['items'][0]['contentDetails']['relatedPlaylists']['uploads'],
+		  'maxResults'=> $mResults,
+                  'key'=> $APIKEY
+				  ];
 $channel_URL = $API_Url . 'playlistItems?' . http_build_query($parameter);
 $jd_plist = json_decode(file_get_contents($channel_URL), true);
 foreach( $jd_plist['items'] as $ch_vods){
@@ -14,7 +21,8 @@ $vod_url = $ch_vods['snippet']['resourceId']['videoId'];
 echo '( Title - '.$vod_title .'</br> Url - https://www.youtube.com/watch?v='.$vod_url.' )</br>';
  }
 }
-youtube_channel_playlist('PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw','AIzaSyC1O_xPd7jMHNOV3vhaY5l4x2cfLRwiqzc', 40); 
+youtube_channel_playlist('UCv9Edl_WbtbPeURPtFDo-uA','AI*****************************2N*iAw', 40); // get your key from google console and replace the *********************************
+
 
 // UCv9Edl_WbtbPeURPtFDo-uA - Youtube channel ID
 // get your key from google console and replace the *********************************
