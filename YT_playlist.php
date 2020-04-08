@@ -16,7 +16,7 @@ echo '( Title - '.$vod_title .'</br> Url - https://www.youtube.com/watch?v='.$vo
 }
 youtube_channel_playlist('PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw','**************************', 20); 
 
-// UCv9Edl_WbtbPeURPtFDo-uA - Youtube channel ID
+// PL4QNnZJr8sRPmuz_d87ygGR6YAYEF-fmw - Youtube playlist ID
 // get your key from google console and replace the *********************************
 // The number of Youtube videos could be raised to anywhere from 1-100
 
