@@ -1,10 +1,11 @@
 function youtube_channel_playlist($playlist_id, $APIKEY,  $mResults){	 
 $API_Url = 'https://www.googleapis.com/youtube/v3/';
-$parameter = [
-             'part'=> 'snippet',
+    $parameter = [
+                  'part'=> 'snippet',
 	          'playlistId' => $playlist_id,
 	          'maxResults'=>  $mResults,
-	          'key'=> $APIKEY	];
+	          'key'=> $APIKEY	
+                 ];
 $channel_URL = $API_Url . 'playlistItems?' . http_build_query($parameter);
 $jd_plist = json_decode(file_get_contents($channel_URL), true);
 foreach( $jd_plist['items'] as $ch_vods){
